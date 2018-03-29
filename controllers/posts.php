@@ -50,4 +50,10 @@ class posts extends Controller
         echo "\$_POST:<br>";
         var_dump($_POST);
     }
+
+    function view()
+    {
+      $post_id = $this->params[0];
+      $this->post = get_first("SELECT * FROM post NATURAL JOIN users WHERE post_id='$post_id'");
+    }
 }

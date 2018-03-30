@@ -7,6 +7,7 @@
                      <article><p>
                           <?= $post['post_text']; ?>
                          </p></article>
+												 <p class="lead"><i class="fa fa-user"></i> Posted by <?=$post['name'] ;?> <i class="fa fa-calendar"></i> on <?=$post['post_created'];?> </p>
 													Tags: <?foreach ($tags as $tag):?><a href="<?=BASE_URL?>tags/view/<?=$tag['tag_id']?>"><span class="badge badge-info"><?=$tag['tag_name']?></span></a> <?endforeach?></p>
                  </div>
                  <?endforeach?>

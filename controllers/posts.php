@@ -11,7 +11,7 @@ class posts extends Controller
      */
     function index()
     {
-        $this->posts = get_all("SELECT * from post");
+        $this->posts = get_all("SELECT * from post NATURAL JOIN users");
         $this->tags = get_all("SELECT tag_name,tag_id, COUNT(post_id) AS count FROM post_tags NATURAL JOIN tag GROUP BY tag_id");
     }
 
@@ -52,10 +52,17 @@ class posts extends Controller
         var_dump($_POST);
     }
 
+
     function view()
     {
       $post_id = $this->params[0];
       $this->post = get_first("SELECT * FROM post NATURAL JOIN users WHERE post_id='$post_id'");
       $this->tags = get_all("SELECT * FROM post_tags NATURAL JOIN tag WHERE post_id='$post_id'");
+      $this->comms = get_all("SELECT * FROM post_comments NATURAL JOIN comment WHERE post_id='$post_id'");
+    }
+    function ins()
+    {
+      $post_id = $this->params[0];
+      $this->post = get_first("SELECT * FROM post WHERE post_id='$post_id'");
     }
 }

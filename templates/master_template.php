@@ -55,7 +55,7 @@
             <ul class="nav navbar-nav">
                 <li <?= $controller == 'posts' ? 'class="active"' : '' ?>><a href="<?=BASE_URL?>">Posts</a></li>
                 <li <?= $controller == 'tags' ? 'class="active"' : '' ?>><a href="<?=BASE_URL?>tags">Tags</a></li>
-                <li <?= $controller == 'users' ? 'class="active"' : '' ?>><a href="<?=BASE_URL?>users">Users</a></li>
+                <li <?= $controller == 'users' ? 'class="active"' : '' ?>><a href="#">Users</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
